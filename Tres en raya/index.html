@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tres en raya</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="animated-shadow">Tres En Raya</h1>
+
+        <div class="contenedor-modos">
+            <div>
+                <h3>NÚMERO DE FICHAS</h3>
+                <label class="btn btn-fichas" for="seisFichas">6 fichas</label>
+                <input type="radio" name="btn-fichas" value="seisFichas">
+                <label class="btn btn-fichas active" for="nueveFichas">9 fichas</label>
+                <input type="radio" name="btn-fichas">
+            </div>
+            <div>
+                <h3>MODOS</h3>
+                <label class="btn btn-modos active" for="unoVsUno">1 vs 1</label>
+                <input type="radio" name="btn-modos">
+                <label class="btn btn-modos" for="jugadorVsAleatorio">Jugador vs Aleatorio</label>
+                <input type="radio" name="btn-modos">
+                <label class="btn btn-modos" for="jugadorVsIA">Jugador vs IA</label>
+                <input type="radio" name="btn-modos">
+            </div>
+        </div>
+
+        <h1 id="turnoJugador"></h1>
+    
+        <div class="contenedor-juego">
+            <table>
+                <tr>
+                    <td><button class="casilla" onclick="jugar('0,0')" id="0,0" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('0,1')" id="0,1" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('0,2')" id="0,2" disabled></button></td>
+                </tr>
+                <tr>
+                    <td><button class="casilla" onclick="jugar('1,0')" id="1,0" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('1,1')" id="1,1" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('1,2')" id="1,2" disabled></button></td>
+                </tr>
+                <tr>
+                    <td><button class="casilla" onclick="jugar('2,0')" id="2,0" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('2,1')" id="2,1" disabled></button></td>
+                    <td><button class="casilla" onclick="jugar('2,2')" id="2,2" disabled></button></td>
+                </tr>
+            </table>
+    
+            <div>
+                <p>Tiempo total: <span id="tiempoTotal">00:00</span></p>
+                <p>Tiempo ronda: <span id="tiempoRonda">00:00</span></p>
+                <div class="contenedor-botones">
+                    <button class="btn" id="jugar">Jugar</button>
+                    <button class="btn" id="reiniciar">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor-resultados">
+            <table>
+                <tr>
+                    <th>Ganadas X</th>
+                    <th>Ganadas O</th>
+                    <th>Empatadas</th>
+                </tr>
+                <tr>
+                    <td id='ganadas'>0</td>
+                    <td id='perdidas'>0</td>
+                    <td id='empatadas'>0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="toasts"></div>
+    <script src="script.js"></script>
+</body>
+</html>
